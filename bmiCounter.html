@@ -8,7 +8,8 @@
         body{
             margin: 0;
             padding: 0;
-            background-image: url(https://cdn.pixabay.com/photo/2019/08/08/22/15/leaves-4393918_960_720.jpg);
+            background-image: url(https://i.imgur.com/m5dUDJh.png);
+            /* background-image: url(https://cdn.pixabay.com/photo/2019/08/08/22/15/leaves-4393918_960_720.jpg); */
 
         }
 
@@ -163,6 +164,26 @@
             border-radius: 3px;
             box-shadow: rgb(116, 116, 116) 2px 2px 2px ;
         }
+        .backImg{
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .backImg .photo{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 5px solid gray;
+            transition: 1s;
+        }
+        .backImg .photo img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
 
         @media (max-width: 992px) {
             .bigcard{
@@ -214,6 +235,10 @@
             .bigcard{
             width: 95vw;
         }
+            .backImg .photo{
+                width: 60px;
+                height: 60px;
+            }
 
         }
 
@@ -252,6 +277,13 @@
         }
             .rightside .botmpart .result .detail::after{
             width: 200px;
+        }
+            .backImg{
+            display: flex;    
+        }
+            .backImg .photo{
+            width: 40px;
+            height: 40px; 
         }
 
         }
@@ -318,6 +350,10 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="backImg">
+        <div class="photo"><img src="https://i.imgur.com/m5dUDJh.png" alt=""></div>
+        <div class="photo"><img src="https://cdn.pixabay.com/photo/2019/08/08/22/15/leaves-4393918_960_720.jpg" alt=""></div>
     </div>
 
 
@@ -456,6 +492,20 @@
             countdetails(); 
 
         })
+
+        // backImg更換
+        let backImg = document.querySelectorAll('.photo');
+        let body = document.body;
+        for(i=0;i<backImg.length;i++){
+            backImg[i].addEventListener('click',function(e){
+                for(j=0;j<backImg.length;j++){
+                    backImg[j].style.border='5px solid gray';
+                }
+                let imgName =this.children[0].getAttribute('src');
+                body.style.backgroundImage= 'url('+imgName+')';
+                this.style.border='5px solid rgb(209, 28, 28)';
+            })
+        };
 
         
     </script>
