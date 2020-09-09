@@ -1,0 +1,307 @@
+body{
+margin: 0;
+padding: 0;
+background-image: url(https://i.imgur.com/m5dUDJh.png);
+/* background-image: url(https://cdn.pixabay.com/photo/2019/08/08/22/15/leaves-4393918_960_720.jpg); */
+
+}
+
+.bigcard{
+width: 950px;
+height: 500px;
+margin: calc((100vh - 500px) / 2) auto;
+display: flex;
+box-shadow: rgb(116, 116, 116) 2px 2px 2px ;
+}
+.leftside{
+width: 70%;
+height: 100%;
+background-color: rgba(245, 164, 164, 0.9);
+}
+.leftside .titletext{
+font-size: 3rem;
+font-weight: 900;
+text-align: center;
+margin: 70px auto;
+}
+.leftside .question .qline{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 30px;
+font-size: 1.5rem;
+font-weight: 700;
+}
+.leftside .question .qline input{
+border-radius: 5px;
+border: transparent 1px solid;
+height: 2rem;
+background-color: rgb(255, 255, 255);
+}
+.leftside .question .qline input,.leftside .question .qline span{
+margin-left: 20px;
+}
+.leftside .question .qline span{
+width: 35px;
+}
+.leftside .clickbtn{
+margin-top: 70px;
+text-align: center;
+}
+.leftside .clickbtn a{
+text-decoration: none;
+display: inline-block;
+background-color: rgb(38, 143, 112);
+padding: 10px 20px;
+border-radius: 5px;
+color: rgb(255, 255, 255);
+box-shadow: rgb(116, 116, 116) 2px 2px 2px ;
+}
+.rightside{
+width: 30%;
+height: 100%;
+background-color: rgba(38, 143, 112, 0.9);
+/*  */
+display: flex;
+flex-wrap: wrap;
+}
+.rightside .toppart{
+height: 15%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+/*  */
+width: 100%;
+}
+.rightside .toppart #deleteall a{
+text-decoration: none;
+display: inline-block;
+background-color: rgb(245, 164, 164);
+padding: 10px 20px;
+border-radius: 5px;
+box-shadow: rgb(116, 116, 116) 2px 2px 2px ;
+}
+.rightside .botmpart{
+height: 85%;
+display: flex;
+/*  */
+width: 100%;
+}
+.rightside .botmpart .result{
+width: 95%;
+height: 95%;
+background-color: rgba(255, 255, 255, 0.9);
+border-radius: 10px;
+margin: 10px auto;
+box-shadow: rgb(116, 116, 116) 2px 2px 2px ;
+}
+.rightside .botmpart .result .detail{
+display: flex;
+align-items: center;
+justify-content: space-around;
+margin-top: 20px;
+position: relative;
+}
+.rightside .botmpart .result .detail::after{
+content: " ";
+width: 200px;
+height: 1px;
+background-color: rgb(5, 5, 5);
+position: absolute;
+bottom: -10px;
+}
+.rightside .botmpart .result .detail .part1{
+width: 35px;
+height: 35px;
+border-radius: 50%;
+text-align: center;
+line-height: 35px;
+}
+.rightside .botmpart .result .detail .part2 .down{
+font-size: 1.5rem;
+margin-top: 5px;
+}
+.rightside .botmpart .result .detail .part2 .down span{
+margin-right: 15px;
+}
+.rightside .botmpart .result .detail .part3 a{
+display: inline-block;
+width: 30px;
+height: 30px;
+background-color: rgb(59, 59, 59);
+text-align: center;
+line-height: 30px;
+text-decoration: none;
+color: rgb(255, 255, 255);
+}
+.zero{
+text-align: center;
+font-size: 2rem;
+font-weight: 800;
+}
+.fail{
+border: orangered 5px solid;
+}
+.more{
+overflow-y: scroll;
+}
+.red{
+background-color: deeppink;
+}
+.blue{
+background-color: deepskyblue;
+}
+.numtotal{
+background-color: ghostwhite;
+padding: 5px 15px;
+border-radius: 3px;
+box-shadow: rgb(116, 116, 116) 2px 2px 2px ;
+}
+.backImg{
+position: fixed;
+top: 0;
+left: 0;
+}
+.backImg .photo{
+width: 100px;
+height: 100px;
+margin: 10px;
+overflow: hidden;
+border-radius: 5px;
+border: 5px solid gray;
+transition: 1s;
+}
+.backImg .photo img{
+height: 100%;
+width: 100%;
+object-fit: cover;
+cursor: pointer;
+}
+
+@media (max-width: 992px) {
+.bigcard{
+width: 750px;
+height: 80vh;
+margin: calc((100vh - 80vh) / 2) auto;
+display: flex;
+flex-wrap: wrap;
+box-shadow: rgb(116, 116, 116) 2px 2px 2px ;
+}
+.leftside{
+width: 100%;
+height: 50%;
+}
+.leftside .titletext{
+margin: 20px auto;
+}
+.leftside .question .qline{
+margin-top: 10px;
+}
+.leftside .clickbtn{
+margin-top: 20px;
+}
+.rightside{
+width: 100%;
+height: 50%;
+/*  */
+flex-direction: column-reverse;
+}
+.rightside .toppart{
+height: 18%;
+/*  */
+width: 100%;
+}
+.rightside .botmpart{
+height: 82%;
+}
+.rightside .botmpart .result{
+width: 450px;
+height: 90%;
+}
+.rightside .botmpart .result .detail::after{
+width: 380px;
+}
+
+}
+
+@media (max-width: 768px) {
+.bigcard{
+width: 95vw;
+}
+.backImg .photo{
+    width: 60px;
+    height: 60px;
+}
+
+}
+
+@media (max-width: 480px) {
+.bigcard{
+width: 90vw;
+height: 90vh;
+margin: calc((100vh - 90vh) / 2) auto;
+}
+.leftside{
+height: 40%;
+}
+.leftside .titletext{
+font-size: 2.5rem;
+margin: 15px auto;
+}
+.leftside .question .qline{
+font-size: 1.5rem;
+font-weight: 600;
+}
+.leftside .question .qline input{
+height: 1.5rem;
+}
+.leftside .question .qline{
+margin-top: 8px;
+}
+.leftside .clickbtn{
+margin-top: 12px;
+}
+.rightside{
+height: 60%;
+}
+.rightside .botmpart .result{
+width: 300px;
+height: 90%;
+}
+.rightside .botmpart .result .detail::after{
+width: 200px;
+}
+.backImg{
+display: flex;    
+}
+.backImg .photo{
+width: 40px;
+height: 40px; 
+}
+
+}
+
+@media (max-width: 320px) {
+.leftside .titletext{
+font-size: 2rem;
+margin: 10px auto;
+}
+.leftside .question .qline{
+font-size: 1rem;
+font-weight: 500;
+}
+.leftside .question .qline input{
+height: 1rem;
+}
+.leftside .question .qline{
+margin-top: 5px;
+}
+.leftside .clickbtn{
+margin-top: 10px;
+}
+.rightside .botmpart .result{
+width: 260px;
+}
+
+
+}
